@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { MailboxIcon, PhoneCallIcon, MapPinAreaIcon, PaperPlaneTiltIcon } from "@phosphor-icons/react";
+import { MailboxIcon, PhoneCallIcon, MapPinAreaIcon, PaperPlaneTiltIcon, WhatsappLogoIcon } from "@phosphor-icons/react";
 
 export default function ContactSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,35 +33,34 @@ export default function ContactSection() {
             ref={sectionRef}
             id="contact"
             className="relative py-20 md:py-32 bg-[#0a0820]/60 overflow-hidden"
-        >
-            {/* Background glow */}
+        > 
             <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-purple-600/5 blur-[120px]" />
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Section Header */}
+               
                 <motion.div
                     className="text-center mb-16 md:mb-20"
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.7 }}
                 >
-                    <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4 block">
+                    <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4 block font-body">
                         Contact
                     </span>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5">
-                        Contact{" "}
-                        <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                            With Us
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-headline text-white mb-5">
+                        Get In{" "}
+                        <span className="bg-indigo-400 bg-clip-text text-transparent font-accent">
+                            Touch
                         </span>
                     </h2>
-                    <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                        Have questions? We&apos;d love to hear from you. Send us a message and
-                        we&apos;ll respond as soon as possible.
+                    <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-body">
+                        Ready to transform your business? We&apos;d love to hear from you. Send us a message and
+                        we&apos;ll respond as soon as possible to discuss your project.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-                    {/* Contact Info */}
+                  
                     <motion.div
                         className="lg:col-span-2 space-y-6"
                         initial={{ opacity: 0, x: -40 }}
@@ -72,7 +71,7 @@ export default function ContactSection() {
                             {
                                 icon: MailboxIcon,
                                 title: "Email Us",
-                                detail: "hello@Century bits.com",
+                                detail: "hello@centurybits.com",
                                 desc: "We reply within 24 hours",
                             },
                             {
@@ -84,8 +83,14 @@ export default function ContactSection() {
                             {
                                 icon: MapPinAreaIcon,
                                 title: "Visit Us",
-                                detail: "San Francisco, CA",
-                                desc: "123 Innovation Drive",
+                                detail: "Your Location",
+                                desc: "Available Worldwide",
+                            },
+                            {
+                                icon: WhatsappLogoIcon,
+                                title: "Whatsapp Us",
+                                detail: "+1 (555) 123-4567",
+                                desc: "24/7 Support",
                             },
                         ].map((item, i) => {
                             const Icon = item.icon;
@@ -105,13 +110,13 @@ export default function ContactSection() {
                                                 <Icon className="size-5 text-purple-400" />
                                             </div>
                                             <div>
-                                                <div className="text-white font-semibold text-sm mb-0.5">
+                                                <div className="text-white font-headline font-semibold text-sm mb-0.5">
                                                     {item.title}
                                                 </div>
-                                                <div className="text-gray-300 text-sm">
+                                                <div className="text-gray-300 text-sm font-body">
                                                     {item.detail}
                                                 </div>
-                                                <div className="text-gray-500 text-xs mt-1">
+                                                <div className="text-gray-500 text-xs mt-1 font-body">
                                                     {item.desc}
                                                 </div>
                                             </div>
@@ -134,9 +139,9 @@ export default function ContactSection() {
                                 <form onSubmit={handleSubmit} className="space-y-5">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                         <div>
-                                            <label className="block text-gray-400 text-sm mb-2">
-                                                Your Name
-                                            </label>
+                                        <label className="block text-gray-400 text-sm mb-2 font-body">
+                                            Your Name
+                                        </label>
                                             <Input
                                                 name="name"
                                                 value={formState.name}
@@ -146,9 +151,9 @@ export default function ContactSection() {
                                             />
                                         </div>
                                         <div>
-                                            <label className="block text-gray-400 text-sm mb-2">
-                                                Your Email
-                                            </label>
+                                        <label className="block text-gray-400 text-sm mb-2 font-body">
+                                            Your Email
+                                        </label>
                                             <Input
                                                 name="email"
                                                 type="email"
@@ -161,7 +166,7 @@ export default function ContactSection() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-gray-400 text-sm mb-2">
+                                        <label className="block text-gray-400 text-sm mb-2 font-body">
                                             Subject
                                         </label>
                                         <Input
@@ -174,7 +179,7 @@ export default function ContactSection() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-gray-400 text-sm mb-2">
+                                        <label className="block text-gray-400 text-sm mb-2 font-body">
                                             Message
                                         </label>
                                         <textarea
@@ -189,7 +194,7 @@ export default function ContactSection() {
 
                                     <Button
                                         type="submit"
-                                        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white py-6 rounded-xl text-base font-medium shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 border-0"
+                                        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white py-6 rounded-xl text-base font-nav shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 border-0"
                                     >
                                         Send Message
                                         <PaperPlaneTiltIcon className="ml-2 size-5" />

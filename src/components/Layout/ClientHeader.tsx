@@ -9,9 +9,9 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Integrations", href: "#integrations" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Services", href: "#services" },
+  { label: "About", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -62,7 +62,7 @@ export default function ClientHeader() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "bg-[#07051a]/80 backdrop-blur-xl border-b border-white/[0.06] py-3"
+            ? "bg-[#07051a]/80 backdrop-blur-xl  py-3"
             : "bg-transparent py-5"
         )}
       >
@@ -70,9 +70,9 @@ export default function ClientHeader() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-1 z-50">
-              <span className="text-xl md:text-2xl font-bold">
+              <span className="text-xl md:text-2xl font-headline">
                 <span className="text-white/50">Century</span>
-                <span className="text-white">bits</span>
+                <span className="text-white">Bits</span>
               </span>
             </Link>
 
@@ -83,7 +83,7 @@ export default function ClientHeader() {
                   key={i}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/[0.04]"
+                  className="px-3 py-2 text-sm font-nav text-gray-400 hover:text-purple-400 transition-colors duration-300 rounded-lg hover:bg-white/[0.04]"
                 >
                   {link.label}
                 </a>
@@ -94,12 +94,12 @@ export default function ClientHeader() {
             <div className="hidden lg:flex items-center gap-3">
               <Button
                 variant="ghost"
-                className="text-gray-400 hover:text-white text-sm"
+                className="text-gray-400 hover:text-purple-400 text-sm font-nav"
               >
-                Sign In
+                Our Work
               </Button>
-              <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-sm px-5 rounded-xl border-0 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 transition-all duration-300">
-                Get Started
+              <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-sm font-nav px-5 rounded-xl border-0 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 transition-all duration-300">
+                Get Quote
               </Button>
             </div>
 
@@ -136,7 +136,7 @@ export default function ClientHeader() {
                   key={i}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-xl text-gray-300 hover:text-white py-3 px-8 rounded-xl hover:bg-white/[0.04] transition-all duration-300"
+                  className="text-xl font-nav text-gray-300 hover:text-purple-400 py-3 px-8 rounded-xl hover:bg-white/[0.04] transition-all duration-300"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }}
@@ -153,12 +153,12 @@ export default function ClientHeader() {
               >
                 <Button
                   variant="ghost"
-                  className="text-gray-400 hover:text-white w-full py-6 text-base"
+                  className="text-gray-400 hover:text-purple-400 w-full py-6 text-base font-nav"
                 >
-                  Sign In
+                  Our Work
                 </Button>
-                <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white w-full py-6 text-base rounded-xl border-0 shadow-lg shadow-purple-500/25">
-                  Get Started
+                <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white w-full py-6 text-base font-nav rounded-xl border-0 shadow-lg shadow-purple-500/25">
+                  Get Quote
                 </Button>
               </motion.div>
             </motion.nav>

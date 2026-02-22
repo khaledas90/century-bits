@@ -30,8 +30,7 @@ export default function CTASection() {
             className="relative py-20 md:py-32 bg-[#0a0820]/60 overflow-hidden"
         >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-
-            {/* Background effects */}
+ 
             <div
                 ref={glowRef}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full bg-purple-600/10 blur-[80px]"
@@ -51,7 +50,7 @@ export default function CTASection() {
                         transition={{ duration: 0.7, delay: 0.1 }}
                     >
                         What are you{" "}
-                        <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
+                        <span className="bg-indigo-400 to-indigo-400 bg-clip-text text-transparent">
                             waiting for?
                         </span>
                     </motion.h2>
@@ -62,8 +61,7 @@ export default function CTASection() {
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.2 }}
                     >
-                        Join thousands of developers who are already building the future
-                        with our AI-powered platform. Start for free today.
+                        Start your journey with us today and experience the future of technology.
                     </motion.p>
 
                     <motion.div
@@ -76,7 +74,7 @@ export default function CTASection() {
                             size="lg"
                             className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white px-10 py-7 text-base rounded-xl shadow-lg shadow-purple-500/25 border-0 w-full sm:w-auto transition-all duration-300 hover:shadow-purple-500/40 hover:scale-[1.02]"
                         >
-                            Get Started Now
+                            Get Started
                             <ArrowFatLinesRightIcon className="ml-2 size-5" />
                         </Button>
                         <Button
@@ -84,28 +82,9 @@ export default function CTASection() {
                             size="lg"
                             className="border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 px-10 py-7 text-base rounded-xl bg-white/5 backdrop-blur-sm w-full sm:w-auto transition-all duration-300 hover:bg-white/10"
                         >
-                            Schedule a Demo
+                            View Portfolio
                         </Button>
-                    </motion.div>
-
-                    {/* Trust Badges */}
-                    <motion.div
-                        className="mt-12 flex flex-wrap justify-center items-center gap-6 md:gap-10"
-                        initial={{ opacity: 0 }}
-                        animate={isInView ? { opacity: 1 } : {}}
-                        transition={{ duration: 0.7, delay: 0.5 }}
-                    >
-                        {[
-                            { icon: <CertificateIcon size={20} />, label: "SOC2 Certified" },
-                            { icon: <CloudLightningIcon size={20} />, label: "99.9% Uptime" },
-                            { icon: <GlobeIcon size={20} />, label: "GDPR Compliant" }
-                        ].map((badge, i) => (
-                            <span key={i} className="text-gray-500 text-sm flex items-center gap-2">
-                                {badge.icon}
-                                {badge.label}
-                            </span>
-                        ))}
-                    </motion.div>
+                    </motion.div> 
                 </motion.div>
             </div>
         </section>

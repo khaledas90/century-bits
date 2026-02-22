@@ -3,12 +3,11 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-
-// Generate stable star positions at module level so they don't shift on re-render
+ 
 const STAR_COUNT = 80;
 const stars = Array.from({ length: STAR_COUNT }, (_, i) => ({
     id: i,
-    top: ((i * 17 + 31) % 100),            // pseudo-random but deterministic
+    top: ((i * 17 + 31) % 100),             
     left: ((i * 23 + 7) % 100),
     size: i % 5 === 0 ? 3 : i % 3 === 0 ? 2 : 1.5,
     duration: 2 + (i % 5) * 0.8,
@@ -37,7 +36,7 @@ export default function StarField() {
 
     return (
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
-            {/* Grid pattern overlay */}
+        
             <div
                 ref={gridRef}
                 className="absolute inset-0 opacity-[0.03]"
@@ -46,8 +45,7 @@ export default function StarField() {
                     backgroundSize: "60px 60px",
                 }}
             />
-
-            {/* Stars */}
+ 
             {stars.map((star) => (
                 <motion.div
                     key={star.id}
